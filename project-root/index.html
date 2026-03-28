@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Adaptive Assistant 🤖</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="ambient-background"></div>
+
+    <div class="card">
+        <div class="top-controls">
+            <button id="stats-btn" class="icon-btn" title="View Usage Stats">📊</button>
+            <button id="settings-btn" class="icon-btn" title="Customize Settings">⚙️</button>
+        </div>
+        <h1>Smart Adaptive Assistant 🤖</h1>
+        <p class="tagline">Helping you decide faster, smarter, better</p>
+        
+        <div id="greeting" class="greeting"></div>
+        <div id="last-activity" class="last-activity">🔁 Last activity: None</div>
+        
+        <div class="input-group">
+            <div class="input-wrapper">
+                <input type="text" id="user-input" placeholder="How are you feeling? (e.g. I'm hungry)" autocomplete="off">
+                <button id="voice-btn" class="voice-btn" aria-label="Start voice input">🎤</button>
+            </div>
+            <button id="analyze-btn">Analyze Intent ⚡</button>
+        </div>
+
+        <div id="status-message" class="status-message"></div>
+        <div id="output" class="output"></div>
+        <div id="explanation" class="explanation"></div>
+    </div>
+    
+    <!-- Stats Modal -->
+    <div id="stats-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>📈 Usage Statistics</h2>
+            <div id="stats-body" class="stats-body"></div>
+            <button class="close-modal modal-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>⚙️ Customize Links</h2>
+            <p style="color:#a0aec0;font-size:0.9rem;margin-bottom:15px;">Add your own URLs to override default actions.</p>
+            <div class="settings-group">
+                <label>Entertainment (Bored):</label>
+                <input type="text" id="setting-bored" placeholder="https://youtube.com">
+            </div>
+            <div class="settings-group">
+                <label>Relaxation (Tired):</label>
+                <input type="text" id="setting-tired" placeholder="https://calm.com">
+            </div>
+            <div class="settings-group">
+                <label>Food (Hungry):</label>
+                <input type="text" id="setting-hungry" placeholder="https://swiggy.com">
+            </div>
+            <div class="settings-group">
+                <label>Focus (Study):</label>
+                <input type="text" id="setting-study" placeholder="https://coursera.org">
+            </div>
+            <div class="settings-group">
+                <label>Travel (Ride):</label>
+                <input type="text" id="setting-ride" placeholder="https://uber.com">
+            </div>
+            <div class="settings-group">
+                <label>Shopping (Shops):</label>
+                <input type="text" id="setting-shops" placeholder="https://amazon.com">
+            </div>
+            <div style="display:flex;gap:10px;margin-top:20px;">
+                <button id="save-settings-btn" class="modal-btn primary">Save & Apply</button>
+                <button class="close-modal modal-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
